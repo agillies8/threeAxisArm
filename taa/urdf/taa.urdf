@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="taa">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.60357942910706E-18 -3.09949606639131E-18 0.003175"
+        rpy="0 0 0" />
+      <mass
+        value="0.0871435086609644" />
+      <inertia
+        ixx="0.000182946878943211"
+        ixy="2.9778502051909E-20"
+        ixz="-2.35338269561785E-22"
+        iyy="0.000183497723835596"
+        iyz="1.04433440382441E-20"
+        izz="0.00036585896209081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motorPlatform">
+    <inertial>
+      <origin
+        xyz="0.000539212630490583 -0.0384489243191982 0.0377417169418289"
+        rpy="0 0 0" />
+      <mass
+        value="1.91719435403581" />
+      <inertia
+        ixx="0.000678568675530656"
+        ixy="2.75309484526873E-10"
+        ixz="-2.41425206448647E-09"
+        iyy="0.000647749773509679"
+        iyz="-2.02479236759882E-05"
+        izz="0.000413494664172736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/motorPlatform.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/motorPlatform.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_axis1_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.013"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="motorPlatform" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0271170340705895 2.58543186859583E-13 -0.003175"
+        rpy="0 0 0" />
+      <mass
+        value="0.0072569822670059" />
+      <inertia
+        ixx="2.32785455243617E-07"
+        ixy="-2.59665560042441E-17"
+        ixz="-1.79242388006757E-22"
+        iyy="2.95802503019819E-06"
+        iyz="-9.68951514813645E-25"
+        izz="3.14204054086491E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.001375 -0.0713 -0.0325"
+      rpy="-1.5708 -1.2993 -1.5708" />
+    <parent
+      link="motorPlatform" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-1.01802594132394E-12 0.0883880686791272 0.00317500000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0114748465412621" />
+      <inertia
+        ixx="3.14098814414628E-05"
+        ixy="3.59640468377617E-16"
+        ixz="5.744453050605E-23"
+        iyy="1.66279150653436E-07"
+        iyz="2.66836878931848E-21"
+        izz="3.14990448421729E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_link4_joint"
+    type="continuous">
+    <origin
+      xyz="0.06 0 0.00089"
+      rpy="0 0 0.041463" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-1.01423383580546E-12 0.0857943719097374 0.00317499999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0180500154206615" />
+      <inertia
+        ixx="4.89619755513742E-05"
+        ixy="5.58417336321924E-16"
+        ixz="-8.39982042626506E-24"
+        iyy="4.48769775397092E-07"
+        iyz="4.42936288621252E-21"
+        izz="4.92894417023046E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link1_joint"
+    type="continuous">
+    <origin
+      xyz="0.015925 -0.0713 -0.0325"
+      rpy="-1.5708 -1.2578 -1.5708" />
+    <parent
+      link="motorPlatform" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="triLink">
+    <inertial>
+      <origin
+        xyz="0.0140398535675026 0.0226703024247618 0.00317500000000042"
+        rpy="0 0 0" />
+      <mass
+        value="0.0133478600838276" />
+      <inertia
+        ixx="2.53957651300294E-06"
+        ixy="-5.12885658199425E-07"
+        ixz="8.09497462489793E-21"
+        iyy="3.00118819824708E-06"
+        iyz="1.4648780358395E-21"
+        izz="5.45106152987833E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/triLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/triLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_trilink_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.17 0.00635"
+      rpy="0 0 -0.31665" />
+    <parent
+      link="link1" />
+    <child
+      link="triLink" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.0850000000021776 -1.04488639962597E-12 0.00317499999999818"
+        rpy="0 0 0" />
+      <mass
+        value="0.0220887278337574" />
+      <inertia
+        ixx="2.59594229688112E-07"
+        ixy="-6.30345435291403E-16"
+        ixz="-6.25450730027275E-21"
+        iyy="5.60387361619186E-05"
+        iyz="-1.85835206326224E-23"
+        izz="5.61498849369272E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tri_link5_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.04 0"
+      rpy="0 0 0.27518" />
+    <parent
+      link="triLink" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="endLink">
+    <inertial>
+      <origin
+        xyz="-0.0167584422082046 0.00772282400330307 0.0135077011378914"
+        rpy="0 0 0" />
+      <mass
+        value="0.0146066153135148" />
+      <inertia
+        ixx="2.30843423990826E-06"
+        ixy="-1.82925554964206E-06"
+        ixz="-2.88046377423338E-21"
+        iyy="5.45760247133386E-06"
+        iyz="-1.31466634098144E-21"
+        izz="7.66787417024559E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.04 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/endLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/endLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link5_end_joint"
+    type="continuous">
+    <origin
+      xyz="-0.17 0 -0.01905"
+      rpy="0 0 -0.27518" />
+    <parent
+      link="link5" />
+    <child
+      link="endLink" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.0554655570808423 -4.34596802989518E-13 -0.00317500000000072"
+        rpy="0 0 0" />
+      <mass
+        value="0.0147296819584394" />
+      <inertia
+        ixx="1.73735735678232E-07"
+        ixy="-4.6267775485042E-16"
+        ixz="-9.84802284449009E-21"
+        iyy="6.75966347175227E-05"
+        iyz="-5.08502339473337E-23"
+        izz="6.76713808530727E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tri_link2_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.00635"
+      rpy="0 0 0.27518" />
+    <parent
+      link="triLink" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="3.6574909767495E-14 0.0849999999999874 0.00317500000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0110443639168787" />
+      <inertia
+        ixx="2.80193680809593E-05"
+        ixy="-1.4632427989369E-18"
+        ixz="-3.00139769644244E-23"
+        iyy="1.29797114844053E-07"
+        iyz="4.52126135034334E-21"
+        izz="2.80749424684636E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taa/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link6_joint"
+    type="continuous">
+    <origin
+      xyz="0.030415 -0.10036 0.0075"
+      rpy="-1.5708 -1.2613 -1.5708" />
+    <parent
+      link="motorPlatform" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

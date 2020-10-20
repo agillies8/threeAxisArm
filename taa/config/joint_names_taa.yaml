@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'base_axis1_joint', 'base_link3_joint', 'link3_link4_joint', 'base_link1_joint', 'link1_trilink_joint', 'tri_link5_joint', 'link5_end_joint', 'tri_link2_joint', 'base_link6_joint', ]

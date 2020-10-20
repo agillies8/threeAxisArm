@@ -1,0 +1,4 @@
+dependent_joints:
+  joint_D: {parent: joint_A, factor: 3 }
+  joint_E: {parent: joint_B }
+  joint_F: {parent: joint_C, factor: -1 }

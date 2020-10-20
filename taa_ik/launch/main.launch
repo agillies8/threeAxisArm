@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch> 
+
+<node   name="publisher_desiredcounts"
+        pkg="taa_ik"
+        type="publisher_desiredcounts.py"
+        args=""
+        output="screen"/>
+
+<node   name="publisher_encoder"
+        pkg="taa_ik"
+        type="publisher_encoder.py"
+        args=""
+        output="screen"/>
+
+<node   name="subscriber"
+        pkg="taa_ik"
+        type="subscriber.py"
+        args=""
+        output="screen"/>
+</launch>

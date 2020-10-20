@@ -1,0 +1,50 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find taa)/urdf/taa.urdf" />
+
+  <!--<rosparam command="load" file="$(find taa_ik)//config/joints.yaml" /> -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <rosparam param="source_list">["joint_states"]</rosparam>
+</node>
+
+<node   name="jointCommander"
+        pkg="taa_ik"
+        type="jointCommander.py"
+        args=""
+        output="screen"/>
+
+<node   name="joint1Pub"
+        pkg="taa_ik"
+        type="joint1Pub.py"
+        args=""
+        output="screen"/>
+
+<node   name="joint2Pub"
+        pkg="taa_ik"
+        type="joint2Pub.py"
+        args=""
+        output="screen"/>
+
+<node   name="jointSubscriber"
+        pkg="taa_ik"
+        type="jointSubscriber.py"
+        args=""
+        output="screen"/>
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find taa)/urdf.rviz" />
+
+</launch>
+
+
