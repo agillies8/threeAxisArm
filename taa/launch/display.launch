@@ -16,5 +16,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find taa)/urdf.rviz" />
+    args="-d $(find taa_ik)/config/taa.rviz" />
 </launch>

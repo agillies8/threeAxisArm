@@ -10,29 +10,17 @@
     <rosparam param="source_list">["joint_states"]</rosparam>
 </node>
 
-<node   name="jointCommander"
+<!--<node   name="jointCommander"
         pkg="taa_ik"
         type="jointCommander.py"
         args=""
-        output="screen"/>
-
-<node   name="joint1Pub"
-        pkg="taa_ik"
-        type="joint1Pub.py"
-        args=""
-        output="screen"/>
-
-<node   name="joint2Pub"
-        pkg="taa_ik"
-        type="joint2Pub.py"
-        args=""
-        output="screen"/>
+        output="screen"/>-->
 
 <node   name="jointSubscriber"
         pkg="taa_ik"
         type="jointSubscriber.py"
         args=""
-        output="screen"/>
+        output="screen"/> 
 
   <node
     name="robot_state_publisher"
@@ -43,7 +31,7 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find taa)/urdf.rviz" />
+    args="-d $(find taa_ik)/config/taa.rviz" />
 
 </launch>
 
