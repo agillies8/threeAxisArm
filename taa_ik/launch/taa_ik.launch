@@ -10,11 +10,11 @@
     <rosparam param="source_list">["joint_states"]</rosparam>
 </node>
 
-<!--<node   name="jointCommander"
+<node   name="jointCommander"
         pkg="taa_ik"
         type="jointCommander.py"
         args=""
-        output="screen"/>-->
+        output="screen"/>
 
 <node   name="jointSubscriber"
         pkg="taa_ik"

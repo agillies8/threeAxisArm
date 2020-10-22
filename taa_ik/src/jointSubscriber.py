@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Float64MultiArray
 from sensor_msgs.msg import JointState
 
 #  0  base_axis1_joint - axis 1 pivot  n
@@ -45,9 +45,19 @@ class MySubscriber(object):
         self.joint3 = 0.0
         self.jointpub = JointPub()
 
-        rospy.Subscriber('command1', Float64, self.joint1_callback)
-        rospy.Subscriber('command2', Float64, self.joint2_callback)
-        rospy.Subscriber('command3', Float64, self.joint3_callback)
+        #if commands are coming from GUI rosrun rqt_ez_publisher rqt_ez_publisher
+        #rospy.Subscriber('command1', Float64, self.joint1_callback)
+        #rospy.Subscriber('command2', Float64, self.joint2_callback)
+        #rospy.Subscriber('command3', Float64, self.joint3_callback)
+
+        #if axis positions are coming from the arduino
+        rospy.Subscriber('arduino_publisher', Float64MultiArray, self.arduino_callback)
+
+    def arduino_callback(self,msg):
+        self.joint1 = msg.data[0]
+        self.joint2 = msg.data[1]
+        self.joint3 = msg.data[2]
+        self.jointpub.Pub(joint1=self.joint1, joint2=self.joint2, joint3=self.joint3)
 
     def joint1_callback(self,msg):
         self.joint1 = msg.data
